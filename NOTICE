@@ -1,0 +1,54 @@
+# NOTICE — Third-party Software & Licenses
+
+This file lists third-party components used by this skill and their respective licenses.
+
+## Python Runtime
+
+- **Python** — PSF License
+  - Required: >= 3.9
+  - The Python license governs the interpreter itself; this skill does not re-license it.
+
+## DesireCore Platform
+
+- **DesireCore** — DesireCore Contributors (see platform LICENSE/NOTICE)
+  - Each installed version of DesireCore follows its own LICENSE and NOTICE file.
+  - The MIT license in the root LICENSE of this package covers only the original content
+    authored by the tender review team; it does not extend to the DesireCore platform,
+    its runtime, its model routing, or any other DesireCore component.
+  - The user-selected model (local or cloud) processes text and images sent to it;
+    the user must have material processing rights.
+
+## Direct Dependencies (jsonschema 4.25.1 + transitive)
+
+| Package | Version | License | Source |
+|---------|---------|---------|--------|
+| jsonschema | 4.25.1 | MIT | https://pypi.org/project/jsonschema/4.25.1/ |
+| attrs | 26.1.0 | MIT | https://pypi.org/project/attrs/26.1.0/ |
+| jsonschema-specifications | 2025.9.1 | MIT | https://pypi.org/project/jsonschema-specifications/2025.9.1/ |
+| referencing | 0.36.2 | MIT | https://pypi.org/project/referencing/0.36.2/ |
+| rpds-py | 0.27.1 | MIT | https://pypi.org/project/rpds-py/0.27.1/ |
+| typing_extensions | 4.16.0 | PSF-2.0 | https://pypi.org/project/typing-extensions/4.16.0/ |
+
+Each dependency retains its own license. The MIT license in the root LICENSE file covers
+only the original content authored by the tender review team; it does not extend to
+third-party packages or the DesireCore platform.
+
+`typing_extensions` is a conditional dependency of `referencing` (active only for
+Python < 3.13); locking it unconditionally is a compatible superset.
+
+## Cloud Model Processing
+
+The user-selected model provider (local or remote) processes text and images sent to it.
+The user must have the legal right to process the materials and provide appropriate
+authorization. Using this skill does not constitute authorization to transmit materials
+to any specific service. No additional OCR, email, or URL transmission beyond the
+model channel is performed without explicit user instruction.
+
+## Descriptions
+
+- **jsonschema**: JSON Schema validation library (Draft-07 support via Draft7Validator).
+- **attrs**: Python class boilerplate library (jsonschema dependency).
+- **jsonschema-specifications**: JSON Schema meta-schemas for jsonschema (Draft-07, etc.).
+- **referencing**: JSON Schema reference resolution library (local registry only in this skill).
+- **rpds-py**: Persistent data structures (Rust-backed, used by referencing).
+- **typing_extensions**: Backported typing features for Python < 3.13.
