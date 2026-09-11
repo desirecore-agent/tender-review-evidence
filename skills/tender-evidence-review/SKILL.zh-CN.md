@@ -67,6 +67,8 @@ description: 标书审查报告的独立证据复核技能（v1.2 草案）。�
    可引用该发现自身的 `limitations`。不捏造 `review_reason`/`review_note` 字段（Schema 中不存在）。
    「未读到」绝不写为「未提供」：无法渲染或未读到的内容不得写成「未提供」而升级为否决。
 
+8. **回复前持久化受治理交付物**：必须在 `assignment.delivery_requirements` 明确命名且包含于 `assignment.io_scope.callee_write_paths` 的精确已授权路径写入独立复核结果。单文件授权只允许该精确文件，禁止自行推断相邻路径；若需要版本化，派发方必须在开工前明确授权输出目录并命名所选文件。交付物须写明被复核包身份、每条校验命令及真实退出码、独立证据结论、未决项和 `completed` / `partial` / `blocked` 状态。写后重新读取，计算 SHA-256，并在最终回执给出路径与哈希。仅阅读、计划、工具记录或聊天回复均不构成交付。无法写入或核验时，能写则写入允许的失败记录并返回 `partial` 或 `blocked`；不得以已读源文件冒充完成。
+
 ## 校验脚本
 
 - 路径：`scripts/validate_report.py`（需 Python 3.9+ 及 jsonschema 4.25.1）

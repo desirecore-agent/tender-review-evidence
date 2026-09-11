@@ -77,6 +77,18 @@ Not in scope:
    "Not read" is never written as "not provided": content that could not be rendered or read must not be
    written as "not provided" to escalate to rejection.
 
+8. **Persist the governed delivery before replying**: Write the independent review result to
+   the exact authorized delivery path named in `assignment.delivery_requirements` and included
+   in `assignment.io_scope.callee_write_paths`. A file grant permits only that exact file;
+   never infer a sibling path. If versioning is needed, the dispatch must explicitly authorize
+   an output directory and name the selected file before work begins. The delivery must state the reviewed
+   pack identity, every validator command with its actual exit code, independent evidence
+   outcomes, open items, and `completed` / `partial` / `blocked` status. Re-read the written
+   file, calculate its SHA-256, and include its path and hash in the final receipt. Reading,
+   planning, a tool transcript, or a chat response is never a delivery. If writing or
+   verification cannot be completed, write the allowed failure record when possible and
+   return `partial` or `blocked`; never imply completion from source reads alone.
+
 ## Validator
 
 - Path: `scripts/validate_report.py`
