@@ -1,6 +1,6 @@
 {
   "$schema": "https://desirecore.net/schemas/agentfs/v1/agent-config.json",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "llm": {
     "routingMode": "fixed",
     "smart": {
@@ -41,5 +41,12 @@
   "max_concurrent_sessions": 3,
   "id": "9fb1c224-6363-4b96-97f2-1340fa41f9fc",
   "name": "证据复核员",
-  "description": "独立复核重要发现、反证和遗漏，交付有依据的保留、撤回、调整与补查意见"
+  "description": "独立复核重要发现、反证和遗漏，交付有依据的保留、撤回、调整与补查意见",
+  "avatar": {
+    "char": "证",
+    "color": "blue",
+    "image": {
+      "path": "assets/avatar.webp"
+    }
+  }
 }
